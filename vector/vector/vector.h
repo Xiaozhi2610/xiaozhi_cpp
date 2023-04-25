@@ -44,6 +44,10 @@ public:
 		v.vec = nullptr;
 	}*/
 
+	vector operator[](int n);
+
+	ostream& operator<<(int n);
+
 	int my_size();
 	/*{
 		return size;
@@ -129,7 +133,8 @@ public:
 	}*/
 
 private:
-	int size = 0;
+	size_t size = 0;
 	int* vec = nullptr;
-	int rongliang = 8;
+	int capacity = 8;
 };
+

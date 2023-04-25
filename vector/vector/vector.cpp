@@ -3,8 +3,8 @@
 vector::vector()
 {
 	std::cout << "vector 无参构造，size 为 0 ！" << std::endl;
-	vec = new int[rongliang];
-	std::cout << "现在vector容量为：" << rongliang << std::endl;
+	vec = new int[capacity];
+	std::cout << "现在vector容量为：" << capacity << std::endl;
 }
 
 vector::vector(int n)
@@ -17,11 +17,11 @@ vector::vector(int n)
 	{
 		std::cout << "vector的有参构造" << std::endl;
 		size = n;
-		while (rongliang < n)
+		while (capacity < n)
 		{
-			rongliang *= 2;
+			capacity *= 2;
 		}
-		vec = new int[rongliang];
+		vec = new int[capacity];
 	}
 }
 
@@ -29,23 +29,35 @@ vector::vector(vector& v)
 {
 	std::cout << "This is copy" << std::endl;
 	size = v.size;
-	rongliang = v.rongliang;
-	int* vec = new int[rongliang];
+	capacity = v.capacity;
+	int* vec = new int[capacity];
 	for (int i = 0; i < size; i++)
 	{
 		vec[i] = v.vec[i];
 	}
+	this->vec = vec;
+	vec = nullptr;
 	std::cout << "原来v的地址：" << v.vec << std::endl;
-	std::cout << "新的v的地址: " << vec << std::endl;
+	std::cout << "新的v的地址: " << this -> vec << std::endl;
 }
 
 vector::vector(vector&& v)noexcept
 {
 	std::cout << "This is std::move()" << std::endl;
 	size = v.size;
-	rongliang = v.rongliang;
+	capacity = v.capacity;
 	vec = v.vec;
 	v.vec = nullptr;
+}
+
+vector vector::operator[](int n)
+{
+	return this->vec[n];
+}
+
+ostream& vector::operator<<(int n)
+{
+
 }
 
 int vector::my_size()
@@ -55,15 +67,15 @@ int vector::my_size()
 
 int vector::my_rongliang()
 {
-	return rongliang;
+	return capacity;
 }
 
 void vector::push_back(int n)
 {
-	if (size >= rongliang)
+	if (size >= capacity)
 	{
-		rongliang *= 2;
-		int* temp = new int[rongliang];
+		capacity *= 2;
+		int* temp = new int[capacity];
 		for (int i = 0; i < size; i++)
 		{
 			temp[i] = vec[i];
@@ -86,10 +98,10 @@ void vector::push_back(int n)
 
 void vector::insert(int n, int num)
 {
-	if (size >= rongliang)
+	if (size >= capacity)
 	{
-		rongliang *= 2;
-		int* temp = new int[rongliang];
+		capacity *= 2;
+		int* temp = new int[capacity];
 		for (int i = 0; i < n; i++)
 		{
 			temp[i] = vec[i];
