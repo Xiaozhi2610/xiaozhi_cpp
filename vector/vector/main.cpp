@@ -1,9 +1,12 @@
-#include"vector.h"
+//#include"vector.h"
+#include <iostream>
+#include<vector>
+
 using namespace std;
 
 int main()
 {
-	vector v;
+	vector<int> v(0);
 
 
 
