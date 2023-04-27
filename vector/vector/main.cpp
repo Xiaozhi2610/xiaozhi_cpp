@@ -4,13 +4,13 @@
 
 using namespace std;
 
-//void my_printf(vector v)
-//{
-//	for (int i = 0; i < v.my_size(); i++)
-//	{
-//		cout << v[i] << end;;
-//	}
-//}
+void my_printf(vector v)
+{
+	for (int i = 0; i < v.my_size(); i++)
+	{
+		cout << v[i] << endl;
+	}
+}
 
 
 
@@ -21,11 +21,11 @@ int main()
 	{
 		v.push_back(i);
 	}
-
+	my_printf(v);
 	
 
 	vector test(v);
-
+	my_printf(test);
 
 
 }

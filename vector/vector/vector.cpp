@@ -50,15 +50,24 @@ vector::vector(vector&& v)noexcept
 	v.vec = nullptr;
 }
 
-vector vector::operator[](int n)
+vector::~vector()
+{
+	std::cout << "vector de xigou hanshu" << std::endl;
+	delete[] vec;
+	vec = nullptr;
+}
+
+int vector::operator[](int n)
 {
 	return this->vec[n];
+	
 }
 
-ostream& vector::operator<<(int n)
-{
-
-}
+//std::ostream& vector::operator<<(int n)
+//{
+//	std::cout << n;
+//	return std::cout;
+//}
 
 int vector::my_size()
 {

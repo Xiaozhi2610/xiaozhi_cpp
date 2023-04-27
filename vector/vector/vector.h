@@ -44,9 +44,11 @@ public:
 		v.vec = nullptr;
 	}*/
 
-	vector operator[](int n);
+	~vector();
 
-	ostream& operator<<(int n);
+	int operator[](int n);
+
+	//std::ostream& operator<<(int n);
 
 	int my_size();
 	/*{
