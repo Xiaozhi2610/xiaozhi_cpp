@@ -16,9 +16,16 @@ void my_printf(vector v)
 
 int main()
 {
+<<<<<<< HEAD
 	int n = 0;
 	cout << n << endl;
 
 	
 
+=======
+	
+
+	
+
+>>>>>>> 21aecf8e81327afd62374a4f5d3efa3ff5e87eea
 }
