@@ -16,7 +16,8 @@ void my_printf(vector v)
 
 int main()
 {
-	
+	int n = 0;
+	cout << n << endl;
 
 	
 
