@@ -4,24 +4,28 @@ vector::vector()
 {
 	std::cout << "vector 无参构造，size 为 0 ！" << std::endl;
 	vec = new int[capacity];
-	std::cout << "现在vector容量为：" << capacity << std::endl;
+	if (vec == nullptr)
+	{
+		std::cout << "构造失败" << std::endl;
+	}
+	else
+	{
+		std::cout << "现在vector容量为：" << capacity << std::endl;
+	}
 }
 
 vector::vector(int n)
 {
-	if (n == 0)
+	std::cout << "vector的有参构造" << std::endl;
+	size = n;
+	while (capacity < n)
 	{
-		std::cout << "参数\"n\"不能为 0 ,构造失败 ！" << std::endl;
+		capacity *= 2;
 	}
-	else
+	vec = new int[capacity];
+	if (vec == nullptr)
 	{
-		std::cout << "vector的有参构造" << std::endl;
-		size = n;
-		while (capacity < n)
-		{
-			capacity *= 2;
-		}
-		vec = new int[capacity];
+		std::cout << "构造失败" << std::endl;
 	}
 }
 
@@ -62,12 +66,6 @@ int vector::operator[](int n)
 	return this->vec[n];
 	
 }
-
-//std::ostream& vector::operator<<(int n)
-//{
-//	std::cout << n;
-//	return std::cout;
-//}
 
 int vector::my_size()
 {
@@ -151,4 +149,89 @@ void vector::earse(int n)
 		vec[i] = vec[i + 1];
 	}
 	vec[size - 1] = 0;
+}
+
+void vector::clear()
+{
+	std::cout << "使用clear()函数清空数组" << std::endl;
+	for (int i = 0; i < size; i++)
+	{
+		vec[i] = 0;
+	}
+	size = 0;
+}
+
+bool vector::empty()
+{
+	if (size == 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+int vector::back()
+{
+	return vec[size - 1];
+}
+
+int vector::front()
+{
+	if (!(this->empty()))
+	{
+		return vec[0];
+	}
+	std::cout << "vector为空" << std::endl;
+}
+
+int vector::at(int n)
+{
+	if (n < size)
+	{
+		return vec[n];
+	}
+	std::cout << "下表超出范围" << std::endl;
+}
+
+void vector::erase(int n)
+{
+	std::cout << "第n个元素为: " << vec[n - 1];
+	for (int i = n; i < size; i++)
+	{
+		vec[i - 1] = vec[i];
+	}
+	vec[size - 1] = 0;
+	size--;
+	std::cout << "第n个参数已被成功删除" << std::endl;
+}
+
+void vector::remove(int n)
+{
+	int temp = 0;
+	for (int i = 0; i < size - temp; i++)
+	{
+		if (vec[i] == n)
+		{
+			temp++;
+		}
+		vec[i] = vec[i + temp];
+	}
+	std::cout << "共找到" << temp << "个" << n << std::endl;
+	while (temp)
+	{
+		vec[size - 1] = 0;
+		size--;
+	}
+}
+
+int vector::find(int n)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (vec[i] == n)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
