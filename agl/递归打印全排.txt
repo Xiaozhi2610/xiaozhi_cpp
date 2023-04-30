@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <set>
+#include <cctype>
+#include<vector>
+#include <algorithm>
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+
+
+void swap(int& a, int& b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+
+void perm(vector<int>::iterator itbegain, vector<int>::iterator itend, vector<int>::iterator begain)
+{
+    if (itbegain == itend)
+    {
+        for (vector<int>::iterator it = begain; it <= itend; it++)
+        {
+            cout << *it << " ";
+        }
+        cout << endl;
+    }
+    else
+    {
+        for (vector<int>::iterator it = itbegain; it <= itend; it++)
+        {
+            swap(*itbegain, *it);
+            perm(itbegain + 1, itend, begain);
+            swap(*itbegain, *it);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main()
+{
+    vector<int> v;
+    for (int i = 0; i < 6; i++)
+    {
+        v.push_back(i);
+    }
+
+    perm(v.begin(), v.end() - 1, v.begin());
+
+
+
+
+
+
+
+    return 0;
+
+}
