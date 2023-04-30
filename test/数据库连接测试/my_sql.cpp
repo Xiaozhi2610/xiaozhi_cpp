@@ -87,4 +87,92 @@ void my_sql::insert()
 	}
 }
 
+void my_sql::update()
+{
+	int flag = 1;
 
+	while (flag)
+	{
+		string name;
+		string sfzh;
+		int id;
+		std::cout << "请输入要修改学生的学号: ";
+		std::cin >> id;
+		std::cout << "请输入要修改学生的姓名: ";
+		std::cin >> name;
+		std::cout << "请输入要修改学生的身份证号: ";
+		std::cin >> sfzh;
+		sprintf(sql, "update xiaozhi set name = '%s',sfzh = '%s'" "where id = %d", name.c_str(), sfzh.c_str(), id);
+		if (mysql_query(con, sql))
+		{
+			fprintf(stderr, "Failed to update to datebase : Error:%s\n", mysql_error(con));
+		}
+		else
+		{
+			std::cout << "成功修改该学生" << std::endl;
+		}
+		std::cout << "是否还要继续修改数据? 0(NO)/1(YES): ";
+		std::cin >> flag;
+	}
+
+}
+
+void my_sql::my_delete()
+{
+	int flag = 1;
+
+	while (flag)
+	{
+		string name;
+		string sfzh;
+		int id;
+		std::cout << "请输入要删除学生的学号: ";
+		std::cin >> id;
+		sprintf(sql, "delete from xiaozhi where id = %d",id);
+		if (mysql_query(con, sql))
+		{
+			fprintf(stderr, "Failed to delete to datebase : Error:%s\n", mysql_error(con));
+		}
+		else
+		{
+			std::cout << "成功删除该学生" << std::endl;
+		}
+		std::cout << "是否还要继续删除数据? 0(NO)/1(YES): ";
+		std::cin >> flag;
+	}
+}
+
+void my_sql::my_find()
+{
+	int id = 0;
+	std::cout << "请输入要查找学生的学号: ";
+	std::cin >> id;
+	sprintf(sql, "select * from xiaozhi where id = %d", id);
+	if (mysql_query(con, sql))
+	{
+		fprintf(stderr, "Failed to find to datebase : Error:%s\n", mysql_error(con));
+	}
+	MYSQL_RES* res = mysql_store_result(con);
+	MYSQL_ROW row;
+	int num = 0;
+	int i = 0;
+	/*while ((row = mysql_fetch_row(res)) != NULL)
+	{
+		if (row[0] != NULL && row[1] != NULL && row[2] != NULL)
+		{
+			std::cout << "id为: " << atoi(row[0]) << " ";
+			std::cout << "姓名为: " << row[1] << " ";
+			std::cout << "身份证号为: " << row[2] << std::endl;
+		}
+		else
+		{
+			break;
+		}
+	}*/
+	while ((row = mysql_fetch_row(res)))    // 遍历结果集
+	{
+		std::cout << "id为: " << atoi(row[0]) << " ";
+		std::cout << "姓名为: " << row[1] << " ";
+		std::cout << "身份证号为: " << row[2] << std::endl;
+	}
+}

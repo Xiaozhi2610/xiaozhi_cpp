@@ -49,9 +49,19 @@ int main()
 		case 1:
 			xiazhi_mysql.insert();
 			break;
+		case 2:
+			xiazhi_mysql.update();
+			break;
+		case 3:
+			xiazhi_mysql.my_delete();
+			break;
+		case 4:
+			xiazhi_mysql.my_find();
+			break;
 		case 6:
 			cout << "欢迎下次使用" << endl;
 			return 0;
+			break;
 		default:
 			break;
 		}

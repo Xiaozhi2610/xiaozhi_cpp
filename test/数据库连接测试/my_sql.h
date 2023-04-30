@@ -1,6 +1,7 @@
 #pragma once
 #include <mysql.h>
 #include "other.h"
+#include <vector>
 
 
 class my_sql
@@ -15,15 +16,11 @@ public:
 
 	void insert();
 
-	int search();
+	void update();
 
+	void my_delete();
 
-
-
-
-
-
-
+	void my_find();
 
 private:
 	char sql[256];
