@@ -43,3 +43,5 @@ void myprint_menu()
 	std::cout << "6. ÍË³öÊý¾Ý¿â" << std::endl;
 }
 
+
+
