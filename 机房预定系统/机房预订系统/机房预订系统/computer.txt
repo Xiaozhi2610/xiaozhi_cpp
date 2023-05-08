@@ -1,0 +1,63 @@
+#define STUDENT "student.txt"
+#define TRECHAR "teacher.txt"
+#define ROOT "root.txt"
+#define COMPUTER "computer.txt"
+
+#include "student.h"
+#include <iostream>
+#include <fstream>
+
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+using std::fstream;
+
+void student::see_com()
+{
+	fstream fstu;
+	fstu.open(COMPUTER, std::ios::in);
+	if (fstu)
+	{
+		cout << "文件打开成功" << endl;
+		fstu.close();
+	}
+	else
+	{
+		cout << "文件打开失败" << endl;
+		fstu.close();
+	}
+	string temp;
+	while (fstu >> temp)
+	{
+		cout << temp << endl;
+	}
+
+
+}
+
+
+
+void student::stu_book()
+{
+
+
+
+
+
+}
+
+void student::see_book()
+{
+
+
+
+
+}
+
+void student::cancle()
+{
+
+
+}
