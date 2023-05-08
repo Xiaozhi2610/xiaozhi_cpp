@@ -14,10 +14,6 @@ char database_name[] = "xiaozhi";
 int port = 3306;
 string temp;
 
-
-
-
-
 int main()
 {
 	show_con();
