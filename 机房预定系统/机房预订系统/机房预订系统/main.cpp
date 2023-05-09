@@ -15,6 +15,7 @@ using std::fstream;
 int main()
 {
 	int select = 0;
+	int select = 0;
 
 
 	while (true)

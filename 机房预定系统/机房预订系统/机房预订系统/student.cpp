@@ -1,12 +1,6 @@
-#define STUDENT "student.txt"
-#define TRECHAR "teacher.txt"
-#define ROOT "root.txt"
-#define COMPUTER "computer.txt"
-
 #include "student.h"
 #include <iostream>
 #include <fstream>
-
 
 using std::cin;
 using std::cout;

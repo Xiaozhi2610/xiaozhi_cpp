@@ -10,16 +10,10 @@ namespace xiaozhi_c_
     {
         static int Main(string[] args)
         {
-            int age = 100;
-            float age2 = 10.2f;
-            System.Double a = 12.3;
-            System.Double b = 12.3;
-            int age3 = (int)age2;
-            Consume consume = new Consume();
-            consume.Record();
-
-
-            Console.WriteLine(age3);
+            string str1 = "xiazohi";
+            string str2 = str1;
+            str1 = "asdlk";
+            Console.WriteLine(str2);
             Console.Read();
             return 0;
         }

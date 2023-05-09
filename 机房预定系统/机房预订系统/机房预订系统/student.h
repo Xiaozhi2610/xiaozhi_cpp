@@ -1,4 +1,9 @@
 #pragma once
+#define STUDENT "student.txt"
+#define TRECHAR "teacher.txt"
+#define ROOT "root.txt"
+#define COMPUTER "computer.txt"
+
 #include <string>
 
 
