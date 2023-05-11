@@ -10,34 +10,31 @@ namespace xiaozhi_c_
     {
         static int Main(string[] args)
         {
-            string str1 = "xiazohi";
-            string str2 = str1;
-            str1 = "asdlk";
-            Console.WriteLine(str2);
+            int xiaozhi = 10;
+
+            for(int xiaozhi = 0; xiaozhi < args.Length;xiaozhi++)
+            {
+                Console.WriteLine(args[xiaozhi]);
+            }
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
             Console.Read();
             return 0;
         }
     }
 
-
-    class card
-    {
-        public string Money { get; set; }
-    }
-
-    class Consume
-    {
-        public void Record ()
-        {
-            Console.WriteLine("信用卡消费记录\n");
-            card pCard = new card() {Money = "8000" };
-            Console.WriteLine("信用卡总额度: " + pCard.Money);
-            card pCard2 = pCard;
-            pCard.Money = "3000";
-            Console.WriteLine("信用卡消费记录: " + pCard.Money);
-
-        }
-    }
 
 
 

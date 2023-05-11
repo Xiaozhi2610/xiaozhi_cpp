@@ -15,7 +15,6 @@ using std::fstream;
 int main()
 {
 	int select = 0;
-	int select = 0;
 
 
 	while (true)
@@ -48,7 +47,7 @@ int main()
 			{
 				stu_mune();
 				cin >> flag;
-				student_mune(stu, flag);
+				//student_mune(stu, flag);
 			}	
 		}
 
