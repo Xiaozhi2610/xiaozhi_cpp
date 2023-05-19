@@ -8,28 +8,19 @@ namespace xiaozhi_c_
 {
     internal class Program
     {
+
+        
         static int Main(string[] args)
         {
-            int xiaozhi = 10;
+            int i = 5;
 
-            for(int xiaozhi = 0; xiaozhi < args.Length;xiaozhi++)
+            for(i = 0; i < 5;i++)
             {
-                Console.WriteLine(args[xiaozhi]);
+                int n = i;
+                Console.WriteLine(n);
             }
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
+            Console.WriteLine(i);
+            
             Console.Read();
             return 0;
         }
