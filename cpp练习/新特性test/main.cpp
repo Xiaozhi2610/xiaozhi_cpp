@@ -102,9 +102,16 @@ void test()
 	void fun(int n = sizeof f);//gcc可以，msvc不行
 	fun();*/
 
-	void (xiaozhi:: * f)() = &xiaozhi::f;
+	/*void (xiaozhi:: * f)() = &xiaozhi::f;
 	xiaozhi xz;
-	(xz.*f)();
+	(xz.*f)();*/
+
+
+
+
+
+
+
 
 	cout << "hello wode" << endl;
 }
