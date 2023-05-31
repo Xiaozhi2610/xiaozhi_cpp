@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
+#include <iterator>
 
 using std::cout;
 using std::endl;
@@ -73,6 +76,14 @@ using std::string;
 //	}
 //};
 
+void fun()
+{
+	std::vector<string> v;
+	copy(std::istream_iterator<string>(cin), std::istream_iterator<string>(), std::back_inserter(v));
+	sort(v.begin(), v.end());
+	unique_copy(v.begin(), v.end(), std::ostream_iterator<string>(cout, "\n"));
+}
+
 class xiaozhi
 {
 public:
@@ -93,7 +104,7 @@ void test()
 {
 	//xiaozhi xz;
 	// 
-	//fun();
+	fun();
 
 	/*xiaozhi* p = new xiaoxiaozhi;
 	p->fun();*/
