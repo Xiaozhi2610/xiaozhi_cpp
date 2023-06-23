@@ -103,7 +103,7 @@ void vector::push_back(int n)
 	}
 }
 
-void vector::insert(int n, int num)
+void vector::insert_fro(int n, int num)
 {
 	if (size >= capacity)
 	{
@@ -131,6 +131,11 @@ void vector::insert(int n, int num)
 		size++;
 		std::cout << "成功在第" << n << "个位置插入" << num << std::endl;
 	}
+}
+
+void vector::insert_bac(int n, int num)
+{
+	
 }
 
 void vector::pop()

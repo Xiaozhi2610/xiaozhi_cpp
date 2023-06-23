@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void my_printf(vector v)
+void my_printf(vector& v)
 {
 	for (int i = 0; i < v.my_size(); i++)
 	{
@@ -16,13 +16,21 @@ void my_printf(vector v)
 
 int main()
 {
-	vector v(10);
-	for (int i = 0; i < 20; i++)
+	vector v0(5);
+	for (int i = 0; i < 5; i++)
 	{
-		v.push_back(i);
+		v0.insert_fro(1, i);
+		my_printf(v0);
 	}
 
+	vector v1(5);
+	for (int i = 0; i < 5; i++)
+	{
+		v0.insert_bac(1, i);
+		my_printf(v1);
+	}
 
+	getchar();
 
 
 

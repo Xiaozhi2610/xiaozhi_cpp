@@ -21,7 +21,9 @@ public:
 
 	void push_back(int n);
 
-	void insert(int n, int num);
+	void insert_fro(int n, int num);
+
+	void insert_bac(int n, int sum);
 
 	void pop();
 

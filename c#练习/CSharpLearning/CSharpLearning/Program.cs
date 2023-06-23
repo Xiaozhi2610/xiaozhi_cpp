@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-
-    interface Test00
-    {
-        void Test01();
+    abstract class Base
+    { 
+        internal Base() 
+        {
+            Console.WriteLine("Base gouzahohanshu");
+        }
+        internal abstract int Com();        
     }
 
-    class Parent : Test00
+    class Add : Base
     {
-        public void Test01()
-        {
-            Console.WriteLine();
-        }
+        
     }
 }
 
@@ -26,20 +26,21 @@ namespace Test
 
 
 namespace CSharpLearning
-{
-    using Test;
 
-    internal class Program : Test00
+{
+    using Test; 
+
+    internal class Program
     {
         static void Main(string[] args)
-        {
-            
+        {   Base bas = new Base();
+
+            bas.Test();
+
+            Console.WriteLine(bas.MyId());
             Console.ReadKey();
         }
 
-        public void Test01()
-        {
 
-        }
     }
 }
